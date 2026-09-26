@@ -6,18 +6,16 @@ puntos de referencia. Se mantiene completamente separado de los
 componentes de interfaz web (Streamlit) para cumplir con el criterio
 de arquitectura y modularidad de la rubrica.
 
-Autor: (completar nombre completo)
-Matricula: (completar matricula)
+Autor: Gerardo Ramírez Martín del Campo
+Matricula: 2403230423
 Asignatura: Ciencia de Datos
-Fecha: (completar fecha de entrega)
+Fecha: 26 de septiembre de 2026
 """
 
 import numpy as np
 import pandas as pd
 
-
-def cargar_puntos(archivo_csv):
-    """Lee un archivo .csv con dos registros (P1 y P2) y los valida.
+"""Lee un archivo .csv con dos registros (P1 y P2) y los valida.
 
     Se espera un archivo con columnas 'x' e 'y' y exactamente dos filas.
 
@@ -32,6 +30,8 @@ def cargar_puntos(archivo_csv):
             si faltan las columnas requeridas, o si x1 es igual a x2
             (lo que impediria calcular la pendiente).
     """
+def cargar_puntos(archivo_csv):
+
     datos = pd.read_csv(archivo_csv)
 
     columnas_requeridas = {"x", "y"}
@@ -60,9 +60,7 @@ def cargar_puntos(archivo_csv):
 
     return (x1, y1), (x2, y2)
 
-
-def calcular_pendiente_y_ordenada(punto_1, punto_2):
-    """Calcula la pendiente (m) y la ordenada al origen (b) de la recta
+"""Calcula la pendiente (m) y la ordenada al origen (b) de la recta
     que pasa por dos puntos dados.
 
     m = (y2 - y1) / (x2 - x1)
@@ -75,6 +73,8 @@ def calcular_pendiente_y_ordenada(punto_1, punto_2):
     Returns:
         tuple: (m, b) como valores flotantes.
     """
+def calcular_pendiente_y_ordenada(punto_1, punto_2):
+    
     x1, y1 = punto_1
     x2, y2 = punto_2
 
@@ -83,10 +83,7 @@ def calcular_pendiente_y_ordenada(punto_1, punto_2):
 
     return pendiente_m, ordenada_b
 
-
-def generar_tabla_prediccion(punto_1, punto_2, pendiente_m, ordenada_b,
-                              pasos_extrapolacion=5):
-    """Genera un DataFrame con los valores interpolados entre x1 y x2,
+"""Genera un DataFrame con los valores interpolados entre x1 y x2,
     y los valores extrapolados (predichos) para x > x2.
 
     Args:
@@ -101,6 +98,8 @@ def generar_tabla_prediccion(punto_1, punto_2, pendiente_m, ordenada_b,
         pandas.DataFrame: columnas 'x', 'y_estimado' y 'tipo'
             ('interpolado' o 'extrapolado').
     """
+def generar_tabla_prediccion(punto_1, punto_2, pendiente_m, ordenada_b,
+                              pasos_extrapolacion=5):
     x1, _ = punto_1
     x2, _ = punto_2
 

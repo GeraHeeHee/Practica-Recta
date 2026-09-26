@@ -1,9 +1,9 @@
 """
 ------------------------------------------------------------------
-Nombre completo: (completar)
-Matricula:       (completar)
-Asignatura:      Ciencia de Datos
-Fecha:           (completar)
+Autor: Gerardo Ramírez Martín del Campo
+Matricula: 2403230423
+Asignatura: Ciencia de Datos
+Fecha: 26 de septiembre de 2026
 ------------------------------------------------------------------
 """
 
